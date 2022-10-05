@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import BlogsSection from './components/BlogsSection';
+import {getArchivedBlogs, getPopularBlogs, getRecentBlogs} from './api';
 
 function App() {
+  const recentBlogs = getRecentBlogs();
+  const popularBlogs = getPopularBlogs();
+  const archivedBlogs = getArchivedBlogs();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BlogsSection blogs={recentBlogs} title="Recent Blogs"/>
+      <BlogsSection blogs={popularBlogs} title="Popular Blogs"/>
+      <BlogsSection blogs={archivedBlogs} title="Archived Blogs"/>
     </div>
   );
 }
