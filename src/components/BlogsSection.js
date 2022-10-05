@@ -1,7 +1,12 @@
-const BlogsSection = ({ blogs = [], title }) => {
+const BlogsSection = ({ blogs = [], title, children }) => {
   return (
     <div className="blogs-section">
-      <h2>{title}</h2>
+      <div className="blogs-section__header-container">
+        <h2 className="blogs-section__header-container__header">
+          {title}
+        </h2>
+        {children}
+      </div>
       <div className="blogs-section__blogs-container">
         {blogs.map((blog) => (
           <div className="blog" key={blog.id}>

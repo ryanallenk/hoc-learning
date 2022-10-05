@@ -29,15 +29,14 @@ const withSearch = (Component, dataPropName, data, filterableFields) => (props) 
   }, [filteredData, props]);
   
   return (
-    <>
+    <Component {...computedProps}>
     <input 
       type='search'
       placeholder={props.placeholder || 'Search'}
       value={searchInputValue}
       onChange={handleSearchInputValueChange}
     />
-    <Component {...computedProps} />
-    </>
+    </Component>
   )
 };
 

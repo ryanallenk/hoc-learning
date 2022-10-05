@@ -6,9 +6,16 @@
 
 .blogs-section {
   text-align: left;
-} 
+}
 
-.blogs-section h2 {
-  font-size: 2rem;
+.blogs-section__header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #333;
+}
+
+.blogs-section__header-container__header {
+  font-size: 2rem;
+  margin: 0;
 }
